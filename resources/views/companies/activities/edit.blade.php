@@ -39,7 +39,7 @@
 
                         <div class="mt-4">
                             @if($activity->photo)
-                                <img src="{{ Storage::url($activity->photo) }}" alt="{{ $activity->name }}" class="mb-4 h-48 rounded-xl">
+                                <img src="{{ Storage::disk('activities')->url($activity->photo) }}" alt="{{ $activity->name }}" class="mb-4 h-48 rounded-xl">
                             @endif
 
                             <x-input-label for="image" :value="__('Photo')" />

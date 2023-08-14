@@ -41,7 +41,7 @@
                                     <tr class="bg-white">
                                         <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
                                             @if($activity->photo)
-                                                <img src="{{ Storage::url($activity->photo) }}" alt="{{ $activity->name }}" class="w-16 h-16 object-cover object-left rounded-xl">
+                                                <img src="{{ Storage::disk('activities')->url($activity->photo) }}" alt="{{ $activity->name }}" class="w-16 h-16 object-cover object-left rounded-xl">
                                             @endif
                                         </td>
                                         <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
