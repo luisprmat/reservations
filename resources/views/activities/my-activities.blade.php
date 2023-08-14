@@ -22,6 +22,13 @@
                                     <a href="{{ route('activity.show', $activity) }}" class="text-lg font-semibold">{{ $activity->name }}</a>
                                 </h2>
                                 <time>{{ $activity->start_time }}</time>
+                                <form action="{{ route('my-activity.destroy', $activity) }}" method="POST" onsubmit="return confirm('{{ __('Are you sure?') }}')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <x-danger-button>
+                                        {{ __('Cancel') }}
+                                    </x-danger-button>
+                                </form>
                             </div>
                         @empty
                             <p>{{ __('No activities') }}</p>
